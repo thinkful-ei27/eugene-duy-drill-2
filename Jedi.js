@@ -21,26 +21,7 @@ function beyond(num) {
 }
 beyond(100);
 
-function decode(uncoded) {
-    const newArr = [];
-    const splitArr = uncoded.split(" ");
-    for (let y in splitArr) {
-        if (splitArr[y][0] === "a") {
-            newArr.push(splitArr[y][1])
-        } else if (splitArr[y][0] === "b") {
-            newArr.push(splitArr[y][2])
-        } else if (splitArr[y][0] === "c") {
-            newArr.push(splitArr[y][3])
-        } else if (splitArr[y][0] === 'd') {
-            newArr.push(splitArr[y][4])
-        } else {
-            newArr.push(" ")
-        }
-    }
-    return newArr.join("");
-}
-console.log(decode(['craft', 'block']))
-/*function decode(letter) {
+function decode(letter) {
     let word = letter.charAt(0);
     if (word === 'a') {
         return letter.charAt(1);
@@ -61,3 +42,34 @@ console.log(decode(['craft', 'block']))
 
 console.log(decode('craft'))
 console.log(decode('block'))
+
+function daysInMonth(month ,leapYear) {
+    let result = " "
+    switch(month) {
+        case 'January':
+        case 'March':
+        case 'May':
+        case 'July':
+        case 'August':
+        case 'October':
+        case 'December':
+            result = `${month} has 31 days.`;
+            break;
+        case 'April':
+        case 'June':
+        case 'September':
+        case 'November':
+            result = `${month} has 30 days.`;
+            break;
+        case 'Febuary':
+        if (leapYear === true) {
+            result = `${month} has 29 days.`
+        } 
+        else {
+            result = `${month} has 28 days.`
+        }
+        break;
+    }
+    return result;
+}
+console.log(daysInMonth('Febuary'))

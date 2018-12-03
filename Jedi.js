@@ -73,3 +73,29 @@ function daysInMonth(month ,leapYear) {
     return result;
 }
 console.log(daysInMonth('Febuary'))
+
+function rockPaperScissors(num) {
+    const randomNo = Math.floor(Math.random() * 3) + 1;
+    if (num === randomNo) {
+        return 'Tie'
+    }
+    if (num === 1 && randomNo === 2) {
+        return 'lose'
+    }
+    if (num === 2 && randomNo === 3) {
+        return 'lose'
+    }
+    if (num === 3 && randomNo === 1) {
+        return 'lose'
+    }
+    if (num > 3 || num < 1) {
+        throw new Error('invalid number')
+    }
+    return 'Win'
+}
+
+try {
+console.log(rockPaperScissors(3))
+}
+catch(e){console.log(e.message);
+}
